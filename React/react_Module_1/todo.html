@@ -59,7 +59,7 @@
             )
         }
 
-        function Todo() {  // store these li's into an array
+        function RegistrationForm() {  // store these li's into an array
             let [tasks, setTasks] = React.useState([]);
             function addTask(value) {
                 // copy data from original
@@ -74,7 +74,7 @@
             }   
             return (
                 <React.Fragment>
-                    <h1>Todo App</h1>
+                    <h1>Registation form</h1>
                     <InputBox addTask={addTask} />
                     <OutPutBox tasks={tasks} />
                 </React.Fragment>)
@@ -82,7 +82,7 @@
 
 
         //1  it puts  component  return value  in the  div with id=app 
-        ReactDOM.render(<Todo />, document.getElementById("app"));
+        ReactDOM.render(<RegistrationForm />, document.getElementById("app"));
     </script>
 </body>
 

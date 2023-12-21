@@ -85,7 +85,7 @@ function Favourites() {
         });
     }
     function descPageNum() {
-        if (currPage == 1) {
+        if (currPage === 1) {
             return;
         }
         setPage(function (currPage) {
@@ -94,7 +94,7 @@ function Favourites() {
     }
 
     // searching
-    let searchedMovies = searchtext == "" ? favourites : filterLogic(searchtext, favourites);
+    let searchedMovies = searchtext === "" ? favourites : filterLogic(searchtext, favourites);
     console.log("searchedmovies", searchedMovies);
 
     function filterLogic(searchText, movieArray) {
@@ -104,7 +104,7 @@ function Favourites() {
             let movieName = movieArray[i].original_title;
             let upperText = movieName.toUpperCase();
             let ans = upperText.includes(upperSearchText);
-            if (ans == true) {
+            if (ans === true) {
                 filteredMovieArray.push(movieArray[i]);
             }
         }
@@ -112,17 +112,17 @@ function Favourites() {
     }
     
     // sorting by rating 
-    let ratedMovies = ratingOrder == null ? searchedMovies : sortFavourites(ratingOrder, searchedMovies);
+    let ratedMovies = ratingOrder === null ? searchedMovies : sortFavourites(ratingOrder, searchedMovies);
     console.log("searchedmovies", ratedMovies);
     function sortFavourites(ratingOrder, favourites) {
-        if (ratingOrder == null) {
+        if (ratingOrder === null) {
             return favourites;
         }
         function helper(a, b) {
             if (ratingOrder) {
                 if (a.vote_average > b.vote_average) {
                     return +1
-                } else if (a.vote_average == b.vote_average) {
+                } else if (a.vote_average === b.vote_average) {
                     return 0
                 } else if (a.vote_average < b.vote_average) {
                     return -1
@@ -130,7 +130,7 @@ function Favourites() {
             } else {
                 if (a.vote_average > b.vote_average) {
                     return -1
-                } else if (a.vote_average == b.vote_average) {
+                } else if (a.vote_average === b.vote_average) {
                     return 0
                 } else if (a.vote_average < b.vote_average) {
                     return +1
@@ -144,7 +144,7 @@ function Favourites() {
     
     
     // sorting by papularty
-    let sortedByrateNPop = popularityOrder == null ? ratedMovies : sortByPopularity(popularityOrder, ratedMovies);
+    let sortedByrateNPop = popularityOrder === null ? ratedMovies : sortByPopularity(popularityOrder, ratedMovies);
     
     
     function sortByPopularity(popularityOrder, ratedMovies) {
@@ -155,7 +155,7 @@ function Favourites() {
         if (popularityOrder) {
             if (a.popularity > b.popularity) {
                 return +1
-            } else if (a.popularity == b.popularity) {
+            } else if (a.popularity === b.popularity) {
                 return 0
             } else if (a.popularity < b.popularity) {
                 return -1
@@ -163,7 +163,7 @@ function Favourites() {
         } else {
             if (a.popularity > b.popularity) {
                 return -1
-            } else if (a.popularity == b.popularity) {
+            } else if (a.popularity === b.popularity) {
                 return 0
             } else if (a.popularity < b.popularity) {
                 return +1

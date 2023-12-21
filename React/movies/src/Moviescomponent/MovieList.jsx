@@ -23,7 +23,7 @@ function MovieList(props) {
     // check favourite movies h ya nhi
     function checkContainFavHandlers(movieId) {
         for (let i = 0; i < favourites.length; i++) {
-            if (favourites[i].id == movieId) {
+            if (favourites[i].id === movieId) {
                 return true
             }
         }
@@ -57,7 +57,7 @@ function MovieList(props) {
         console.log("add", movieId);
         for (let i = 0; i < movies.length; i++) {
             let movieObj = movies[i];
-            if (movieObj.id == movieId) {
+            if (movieObj.id === movieId) {
                 // [..favorites,movieobj]
                 let newfavourites = [...favourites];
                 newfavourites.push(movieObj);
@@ -114,7 +114,7 @@ function MovieList(props) {
         let movieName = movieArray[i].original_title;
         let upperText = movieName.toUpperCase();
         let ans = upperText.includes(upperSearchText);
-        if (ans == true) {
+        if (ans === true) {
             filteredMovieArray.push(movieArray[i]);
         }
     }
@@ -132,7 +132,7 @@ function MovieList(props) {
            
             <hr />
             {
-                movies == "" ? <h2>Loading Movies</h2 > :
+                movies === "" ? <h2>Loading Movies</h2 > :
                     <div className="trending_box">
 
                         {/* ask why travse on serch Movies */}
