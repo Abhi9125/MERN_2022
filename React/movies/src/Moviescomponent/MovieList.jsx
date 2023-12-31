@@ -38,13 +38,13 @@ function MovieList(props) {
             favourites.filter((movieObj) => {
 
                 // 
-                return movieObj.id != movieId;
+                return movieObj.id !== movieId;
             })
 
         let prevStrArray = localStorage.getItem("favourites") || "[]";
         let prevArray = JSON.parse(prevStrArray);
         prevArray = prevArray.filter((movieObj) => {
-            return movieObj.id != movieId;
+            return movieObj.id !== movieId;
         })
         prevArray = JSON.stringify(prevArray);
         localStorage.setItem("favourites", prevArray);
@@ -126,7 +126,7 @@ function MovieList(props) {
         // and show only filterd movies 
         <>
         <div className='flexSerchBox'> 
-            <h2>Trending Movies</h2>
+            <h2>Trending Movies :  </h2>
             <input className='SearchBox' onChange={setText} value={value}></input>
             </div>
            
@@ -139,10 +139,10 @@ function MovieList(props) {
                         {searchedMovies.map(function (movieObj, idx) {
                             return (
                                 <div key={idx} className="poster_box">
-                                    <h2>{movieObj.original_title}</h2>
-                                    <img src={"https://image.tmdb.org/t/p/w500/" + movieObj.poster_path} className="poster_img"></img>
+                                     <h2 className="movie-title">{movieObj.original_title}</h2>
+                                    <img src={"https://image.tmdb.org/t/p/w500/" + movieObj.poster_path} className="poster_img" alt="movie"></img>
                                     {
-                                        checkContainFavHandlers(movieObj.id) == true ?
+                                        checkContainFavHandlers(movieObj.id) === true ?
                                         // agar true aye to x ka mork show hoga.
                                             <i className="fa-solid fa-xmark"
                                             // 

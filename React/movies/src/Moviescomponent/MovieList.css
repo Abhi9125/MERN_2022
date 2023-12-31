@@ -1,20 +1,48 @@
+/* MovieList Styles */
+
 .trending_box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin-inline-start: 1rem;
-}
-.trending_box>*{
-    text-align: center;
-}
-.poster_box {
-    width: 30%;
-    height: 30rem;
-    /* border: 1px solid gray; */
-    margin-bottom: 1rem;
-    ;
-}
-
-.poster_img {
-    height: 80%;
-}
+  }
+  
+  .poster_box {
+    width: 200px;
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 8px;
+  }
+  
+  .poster_img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .fa-xmark,
+  .fa-face-grin-hearts {
+    font-size: 24px;
+    width: 24px; /* Explicitly set the width */
+    height: 24px; /* Explicitly set the height */
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+  }
+  /* Add this style to limit the length of movie names in MovieList */
+.poster_box h2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0; /* Adjust as needed */
+  }
+  .flexSerchBox{
+    display: flex;
+    align-items: center;
+  }
+  .SearchBox{
+    margin: 10px;
+    height: 20px;
+  }

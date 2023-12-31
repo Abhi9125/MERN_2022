@@ -1,21 +1,37 @@
+/* Header Styles */
+
 .head {
     display: flex;
-    margin-top: 1rem;;
-    margin-inline-start: 2rem;
-}
-
-.head > * {
-    margin-right: 2rem;
-}
-.head > img{
-    height: 10vh;
-}
-
-a {
+    align-items: center;
+    /* justify-content: */
+    padding: 10px;
+    background-color: #282c34; /* Adjust background color as needed */
+    color: white;
+  }
+  
+  .head img {
+    width: 50px; /* Adjust image size as needed */
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .head h2 {
+    margin: 0;
+  }
+  
+  .home,
+  .favorites {
+    margin-left: 20px;
+  }
+  
+  .home, .favorites a {
     text-decoration: none;
-    color: rgb(159, 176, 222);
-}
-
-.border-bottom {
-    border-bottom: 1px solid gray;
-}
+    /* color: white; */
+  }
+  
+  .home:hover,
+  .favorites:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  

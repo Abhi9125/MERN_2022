@@ -1,5 +1,7 @@
-.banner_img{
-    height:40vh;
-    width:100vw;
+/* Banner Styles */
+
+.banner_img {
+    width: 100%;
+    height: 300px;
     object-fit: cover;
-}
+  }

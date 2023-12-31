@@ -5,15 +5,21 @@ function Header() {
     return (
         <div className="head">
             <img src
-                ="https://img.icons8.com/external-bearicons-blue-bearicons/50/000000/external-movie-call-to-action-bearicons-blue-bearicons.png">
+                ="https://img.icons8.com/external-bearicons-blue-bearicons/50/000000/external-movie-call-to-action-bearicons-blue-bearicons.png" alt="banner">
             </img>
             {/* React router link*/}
-            <Link to="/home">
+            <div className='home'>
+                <Link to="/home">
                 <h2>Movies</h2>
-            </Link>
-            <Link to="/favourites">
+            </Link>  
+            </div>
+            <div className='favorites'>
+               <Link to="/favourites">
                 <h2>Favorites</h2>
-            </Link>
+            </Link>  
+            </div>
+         
+           
         </div>
     )
 }
